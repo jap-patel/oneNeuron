@@ -8,9 +8,7 @@ plt.style.use("fivethirtyeight") # THIS IS STYLE OF GRAPHS
 
 def prepare_data(df):
   X = df.drop("y", axis=1)
-
   y = df["y"]
-
   return X, y
 
 def save_model(model, filename):
@@ -48,3 +46,16 @@ def save_plot(df, file_name, model):
     plt.ylim(xx2.min(), xx2.max())
 
     plt.plot()
+
+
+
+  X, y = prepare_data(df)
+
+  _create_base_plot(df)
+  _plot_decision_regions(X, y, model)
+
+  plot_dir = "plots"
+  os.makedirs(plot_dir, exist_ok=True) # ONLY CREATE IF MODEL_DIR DOESN"T EXISTS
+  plotPath = os.path.join(plot_dir, file_name) # model/filename
+  plt.savefig(plotPath)
+
