@@ -5,12 +5,25 @@ import joblib # FOR SAVING MY MODEL AS A BINARY FILE
 from matplotlib.colors import ListedColormap
 import os
 plt.style.use("fivethirtyeight") # THIS IS STYLE OF GRAPHS
+import logging
+
+logging_str = "[%(asctime)s: %(levelname)s: %(moule)s] %(message)s"
+logging.basicConfig(level = logging.INFO, format = logging_str)
 
 def prepare_data(df):
-  X = df.drop("y", axis=1)
-  y = df["y"]
-  return X, y
+    """it separates the dependant variables and independant features
 
+    Args:
+        df (pd.Dataframe): its the pandas dataframe
+
+    Returns:
+        tupple : it returns the tupple of dependant variable and independant variables
+    """
+    logging.info("preparing the dataframe for the model")
+    X = df.drop("y", axis=1)
+    y = df["y"]
+    return X, y
+  
 def save_model(model, filename):
   model_dir = "models"
   os.makedirs(model_dir, exist_ok=True) # ONLY CREATE IF MODEL_DIR DOESN"T EXISTS
