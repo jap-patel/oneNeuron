@@ -6,8 +6,8 @@ Perceptron model over And & Or logic gates
 <img src="oneNeuron/plots/and.png" alt="And gate plot" width="500" height="600"/>
 
 ## Or gate plot :
-![Or gate plot](/oneNeuron/plots/OR.png)
-<img src="oneNeuron/plots/OR.png/" alt="OR gate plot" width="500" height="600"/>
+![Or gate plot](oneNeuron/plots/OR.png)
+
 
 ## Perceptron model :
 
@@ -56,3 +56,20 @@ class Perceptron:
 
 
 ```
+## Dataset of And gate :
+
+x1 | x2 | y
+-|-|-
+0|0|0
+0|1|0
+1|0|0
+1|1|1
+
+## Dataset of Or gate :
+
+x1 | x2 | y
+-|-|-
+0|0|0
+0|1|1
+1|0|1
+1|1|1
