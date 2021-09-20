@@ -7,3 +7,4 @@ And gate plot :
 
 Or gate plot :
 ![Or gate plot](oneNeuron/plots/OR.png)
+<img src="oneNeuron/plots/OR.png" alt="And gate plot" width="500" height="600">
